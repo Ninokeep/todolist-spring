@@ -37,8 +37,17 @@ public class Todos {
         this.id = id;
         this.name = name;
         this.title = title;
-        this.finished = finished;
+        this.finished = false;
         this.create_at = LocalDate.now();
+    }
+
+    public void setCreateAt() {
+        this.create_at = LocalDate.now();
+    }
+
+    public Long getId() {
+
+        return this.id;
     }
 
     public String getName() {
