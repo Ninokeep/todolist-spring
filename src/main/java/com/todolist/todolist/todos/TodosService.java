@@ -35,11 +35,19 @@ public class TodosService {
     }
 
     public Todos updateTodo(Todos todos, Long id) {
+
         return todosRepository.findById(id).map(
                 todo -> {
-                    todo.setName(todos.getName());
-                    todo.setTitle(todos.getTitle());
-                    todos.setFinished(todos.getFinished());
+                    if (todos.getName() != null) {
+                        todo.setName(todos.getName());
+                    }
+                    if (todos.getTitle() != null) {
+                        todo.setTitle(todos.getTitle());
+                    }
+                    if (todos.getFinished() != null) {
+                        todo.setFinished(todos.getFinished());
+
+                    }
                     return todosRepository.save(todo);
                 }).orElseGet(() -> {
                     return todosRepository.save(todos);
