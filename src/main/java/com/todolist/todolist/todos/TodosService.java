@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,6 +30,10 @@ public class TodosService {
 
     public Todos createTodo(Todos todos) {
 
+        if (todos.getName() == null || todos.getTitle() == null) {
+
+            return null;
+        }
         todos.setCreateAt();
         todos.setFinished(false);
         todosRepository.save(todos);

@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,9 +39,14 @@ public class TodosController {
     }
 
     @PostMapping
-    public Todos createTodo(@RequestBody Todos todos) {
+    public ResponseEntity<Todos> createTodo(@RequestBody Todos todos) {
 
-        return todosService.createTodo(todos);
+        Todos todoResult = todosService.createTodo(todos);
+        if (todoResult == null) {
+            return ResponseEntity.badRequest().build();
+
+        }
+        return ResponseEntity.ok(todos);
     }
 
     @PutMapping("/{id}")
