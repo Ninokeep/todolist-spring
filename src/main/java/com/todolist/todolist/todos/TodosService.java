@@ -35,7 +35,9 @@ public class TodosService {
             return null;
         }
         todos.setCreateAt();
-        todos.setFinished(false);
+        if (todos.getFinished() == null) {
+            todos.setFinished(false);
+        }
         todosRepository.save(todos);
         return todos;
     }
