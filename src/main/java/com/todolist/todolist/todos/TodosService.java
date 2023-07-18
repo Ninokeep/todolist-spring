@@ -1,6 +1,7 @@
 package com.todolist.todolist.todos;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,9 +66,10 @@ public class TodosService {
     public Todos deleteTodo(Long id) {
         Optional<Todos> todoFound = todosRepository.findById(id);
         if (!todoFound.isPresent()) {
-            throw new IllegalArgumentException("id user not found");
+            new NoSuchElementException("Objet non trouvé avec l'ID : " + id);
         }
         Todos todo = todoFound.get();
+        todosRepository.deleteById(todo.getId());
         return todo;
     }
 }
