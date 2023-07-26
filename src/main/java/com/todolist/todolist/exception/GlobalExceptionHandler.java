@@ -1,4 +1,4 @@
-package com.todolist.todolist.todos.exception;
+package com.todolist.todolist.exception;
 
 import java.util.NoSuchElementException;
 

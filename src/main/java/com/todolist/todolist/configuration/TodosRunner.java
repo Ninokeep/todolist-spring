@@ -1,12 +1,15 @@
-package com.todolist.todolist.todos;
+package com.todolist.todolist.configuration;
 
 import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.todolist.todolist.models.Todos;
+import com.todolist.todolist.repository.TodosRepository;
+
 @Configuration
-public class TodosConfig {
+public class TodosRunner {
 
     @Bean
     CommandLineRunner commandLineRunner(TodosRepository todosRepository) {

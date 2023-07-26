@@ -1,4 +1,4 @@
-package com.todolist.todolist.todos;
+package com.todolist.todolist.services;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import com.todolist.todolist.models.Todos;
+import com.todolist.todolist.repository.TodosRepository;
 
 @Service
 public class TodosService {

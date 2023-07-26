@@ -15,9 +15,9 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.todolist.todolist.todos.Todos;
-import com.todolist.todolist.todos.TodosRepository;
-import com.todolist.todolist.todos.TodosService;
+import com.todolist.todolist.models.Todos;
+import com.todolist.todolist.repository.TodosRepository;
+import com.todolist.todolist.services.TodosService;
 
 @SpringBootTest
 public class TodosServiceTest {

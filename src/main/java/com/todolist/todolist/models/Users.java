@@ -1,4 +1,4 @@
-package com.todolist.todolist.users;
+package com.todolist.todolist.models;
 
 import com.todolist.todolist.utils.enums.AccountType;
 import com.todolist.todolist.utils.enums.UserRole;

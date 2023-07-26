@@ -1,6 +1,8 @@
-package com.todolist.todolist.users;
+package com.todolist.todolist.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.todolist.todolist.repository.UsersRepository;
 
 public class UsersService {
 
